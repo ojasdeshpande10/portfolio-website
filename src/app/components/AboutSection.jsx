@@ -9,10 +9,13 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
+        <li>C++</li>
+        <li>Python</li>
+        <li>Java</li>
+        <li>Spring Boot</li>
+        <li>Spark</li>
         <li>Node.js</li>
-        <li>Express</li>
         <li>PostgreSQL</li>
-        <li>Sequelize</li>
         <li>JavaScript</li>
         <li>React</li>
       </ul>
@@ -23,8 +26,8 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+        <li>Stony Brook University (MS in CS)</li>
+        <li>Manipal Institute of Technology (BS in CS)</li>
       </ul>
     ),
   },
@@ -33,8 +36,21 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+        <li>
+          <a href="https://www.coursera.org/account/accomplishments/verify/WC7QKEVTZKLL" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+            Graph Analytics for Big Data - UC San Diego
+          </a>
+        </li>
+        <li>
+          <a href="https://www.coursera.org/account/accomplishments/verify/5ATHGXVAT7F3" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+             Big Data Modeling and Management Systems - UC San Diego
+          </a>
+        </li>
+        <li>
+          <a href="https://www.coursera.org/account/accomplishments/verify/XNSUNP28VZVR" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+             Big Data Integration and Processing - UC San Diego
+          </a>
+        </li>
       </ul>
     ),
   },
@@ -53,39 +69,25 @@ const AboutSection = () => {
   return (
     <section className="text-white" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/about-image.png" width={500} height={500} />
+        <Image src="/images/about-image.png" width={500} height={500} alt="About Me" />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+            I’m a highly motivated and results-driven software developer with 2 years of experience of working 
+            in web development and handling complex web applications and their communication with the backend services.
+            What sets me apart is my passion for learning new technologies by working on projects which solve real-life problems.
+            I thrive in fast-paced environments and enjoy collaborating with people to solve complex problems.
           </p>
           <div className="flex flex-row justify-start mt-8">
-            <TabButton
-              selectTab={() => handleTabChange("skills")}
-              active={tab === "skills"}
-            >
-              {" "}
-              Skills{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("education")}
-              active={tab === "education"}
-            >
-              {" "}
-              Education{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("certifications")}
-              active={tab === "certifications"}
-            >
-              {" "}
-              Certifications{" "}
-            </TabButton>
+            {TAB_DATA.map(({ id, title }) => (
+              <TabButton
+                key={id}
+                selectTab={() => handleTabChange(id)}
+                active={tab === id}
+              >
+                {title}
+              </TabButton>
+            ))}
           </div>
           <div className="mt-8">
             {TAB_DATA.find((t) => t.id === tab).content}
