@@ -12,12 +12,16 @@ const TAB_DATA = [
         <li>C++</li>
         <li>Python</li>
         <li>Java</li>
+        <li>PyTorch</li>
+        <li>TensorFlow</li>
         <li>Spring Boot</li>
         <li>Spark</li>
         <li>Node.js</li>
         <li>PostgreSQL</li>
         <li>JavaScript</li>
         <li>React</li>
+        <li>Golang</li>
+        <li>Big Data Analytics</li>
       </ul>
     ),
   },
@@ -73,10 +77,9 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I’m a highly motivated and results-driven software developer with 2 years of experience of working 
-            in web development and handling complex web applications and their communication with the backend services.
-            What sets me apart is my passion for learning new technologies by working on projects which solve real-life problems.
-            I thrive in fast-paced environments and enjoy collaborating with people to solve complex problems.
+           I’m a highly motivated and results-driven software developer with 2 years of experience in distributed data processing and enhancing AI workflows.
+           My passion lies in leveraging advanced data engineering techniques to tackle real-world challenges. 
+           With a proven track record in optimizing data transfer protocols and integrating AI systems, I thrive in fast-paced environments and enjoy collaborating with cross-functional teams to solve complex problems. My experience in both web development and backend services enables me to bridge the gap between data processing and AI implementation effectively.
           </p>
           <div className="flex flex-row justify-start mt-8">
             {TAB_DATA.map(({ id, title }) => (
